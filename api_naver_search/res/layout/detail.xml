@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:gravity="center_vertical"
+	android:layout_gravity="center_horizontal" android:background="#FFFFFF">
+
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:orientation="vertical">
+		<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textStyle="bold"
+			android:textSize="18dip" android:padding="5dip" android:textColor="#0000ff"
+			android:text="TITLE" />
+
+		<TextView android:id="@+id/TextView02" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textSize="15dip"
+			android:text="TITLE" />
+	</LinearLayout>
+
+
+	<ImageView android:id="@+id/ImageView01"
+		android:layout_width="200dip" android:layout_height="200dip" android:layout_gravity="center_vertical|center"/>
+
+
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:orientation="vertical" android:layout_gravity="center">
+
+		<TextView android:id="@+id/TextView03" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentRight="true"
+			android:textColor="#ccf88107" android:textSize="18dip"
+			android:textStyle="bold" android:paddingRight="4dip" android:text="TEXT3" android:gravity="center"/>
+
+
+		<TextView android:id="@+id/TextView04" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentRight="true"
+			android:textColor="#ccf88107" android:textSize="18dip"
+			android:textStyle="bold" android:paddingRight="4dip" android:text="TEXT3" />
+
+		<TextView android:id="@+id/TextView05" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentRight="true"
+			android:textStyle="bold" android:paddingRight="4dip" android:text="TEXT4" android:textSize="18dip"
+			android:textColor="#0000ff"/>
+	</LinearLayout>
+
+
+
+
+</LinearLayout>
