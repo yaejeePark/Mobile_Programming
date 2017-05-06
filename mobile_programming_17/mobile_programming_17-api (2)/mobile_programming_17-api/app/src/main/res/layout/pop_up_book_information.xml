@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+android:layout_width="250dp"
+
+android:layout_height="wrap_content"
+
+android:orientation="vertical"
+
+android:padding="5dp" >
+
+
+
+<TableRow
+
+    android:layout_width="match_parent"
+
+    android:layout_height="30dp"
+
+    android:orientation="horizontal"
+
+    android:weightSum="5">
+
+
+
+    <TextView
+
+        android:layout_width="0dp"
+
+        android:layout_height="match_parent"
+
+        android:layout_weight="1.5"
+
+        android:text="PAGE"
+
+        android:textSize="12sp"
+
+        android:gravity="center"/>
+
+
+
+    <EditText
+
+        android:id="@+id/dialog_edit"
+
+        android:layout_width="0dp"
+
+        android:layout_height="match_parent"
+
+        android:layout_weight="3.5"
+
+        android:hint="input name"
+
+        android:textSize="12sp"
+
+        android:gravity="center"/>
+
+
+
+</TableRow>
+
+
+
+<TableRow
+
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal"
+
+    android:weightSum="5">
+
+
+
+    <TextView
+
+        android:layout_width="0dp"
+
+        android:layout_height="match_parent"
+
+        android:layout_weight="1.5"
+
+        android:text="NATION"
+
+        android:textSize="12sp"
+
+        android:gravity="center"/>
+
+
+
+    <Spinner
+        android:id="@+id/spinnerExample"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:prompt="@string/popup_genre"
+        android:entries="@array/strarray_mobile_network_types"/>
+    <!--android:prompt="@string/popup_genre"-->
+
+
+
+</TableRow>
+
+
+
+</TableLayout>
+
+
