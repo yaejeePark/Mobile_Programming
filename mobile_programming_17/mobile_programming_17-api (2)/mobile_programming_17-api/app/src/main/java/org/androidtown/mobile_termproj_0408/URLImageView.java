@@ -18,7 +18,7 @@ public class URLImageView extends ImageView {
         super(context, attrs);
     }
     ImageRequest mRequest;
-    public void setImageURL(String url) {
+    public void setImageURL(String url,final int position) {
         if (mRequest != null) {  //scrapedView 때문에 잘못된 이미지가 나오지 않게 하기 위해
             mRequest.cancel();
             mRequest = null;
@@ -32,6 +32,9 @@ public class URLImageView extends ImageView {
                 public void onSuccess(NetworkRequest<Bitmap> request, Bitmap result) {
                     setImageBitmap(result);
                     mRequest = null;
+                    getImageList.setBitmap(result,position);
+
+
                 }
 
                 @Override
@@ -44,6 +47,5 @@ public class URLImageView extends ImageView {
         } else {
             setImageResource(R.drawable.ic_empty);
         }
-
     }
 }

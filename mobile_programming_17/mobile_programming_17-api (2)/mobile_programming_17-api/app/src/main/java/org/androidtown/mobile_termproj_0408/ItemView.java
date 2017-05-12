@@ -29,15 +29,13 @@ public class ItemView extends FrameLayout {
     BookItem item;
     //    ImageRequest mRequest;
     //
-    public void setBookItem(BookItem item) {
+    public void setBookItem(BookItem item,int position) {
         this.item = item;
         titleView.setText(Html.fromHtml(item.title));
         authorView.setText(item.author);
         d_catgView.setText(item.d_catg);
 
         // iconView item.image....
-        iconView.setImageURL(item.image);
-
+        iconView.setImageURL(item.image,position);
     }
 }
-

@@ -23,12 +23,17 @@
             <android.support.design.widget.TabItem
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Tab1" />
+                android:text="다 읽은 책" />
+            <!--<android.support.v4.app.FragmentTabHost-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:text="다 읽은 책"-->
+                <!--</android.support.v4.app.FragmentTabHost>-->
 
             <android.support.design.widget.TabItem
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Tab2" />
+                android:text="분석" />
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

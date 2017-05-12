@@ -51,9 +51,9 @@ public class BookListAdapter extends BaseAdapter {
         }else {
             view = (ItemView)convertView;
         }
-        view.setBookItem(items.get(position));
+        view.setBookItem(items.get(position),position);
+        getImageList.setName(items.get(position),position);
+
         return view;
     }
 }
-
-

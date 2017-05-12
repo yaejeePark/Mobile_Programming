@@ -23,7 +23,17 @@
         </activity>
         <activity android:name=".BookListActivity" />
         <activity android:name=".MypageAnalysis" />
-        <activity android:name=".MypageReadBook"></activity>
+        <activity android:name=".MypageReadBook" />
+        <!-- splash -->
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            </activity>
+
+        <!--android:configChanges="orientation|keyboardHidden"-->
+            <!--android:screenOrientation="portrait"-->
+        <!-- splash -->
+
     </application>
 
 </manifest>

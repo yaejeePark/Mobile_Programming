@@ -2,6 +2,7 @@ package org.androidtown.mobile_termproj_0408;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -84,13 +86,23 @@ public class BookListActivity extends AppCompatActivity {
 //            //res폴더>>layout폴더>>dialog_addmember.xml 레이아웃 리소스 파일로 View 객체 생성
 //            //Dialog의 listener에서 사용하기 위해 final로 참조변수 선언
              View dialogView= inflater.inflate(R.layout.pop_up_book_information, null);
+            Bitmap savebit;//저장할 비트맵 파일
+            savebit=getImageList.arrBit[position];
+            String bookName=getImageList.name[position];
 
             AlertDialog.Builder builder = new AlertDialog.Builder(BookListActivity.this);     // 여기서 this는 Activity의 this
             builder.setView(dialogView); //위에서 inflater가 만든 dialogView 객체 세팅 (Customize)
 //// 여기서 부터는 알림창의 속성 설정
           builder.setTitle("책 정보");       // 제목 설정
 //            //밑은 이미지 설정
-            builder.setPositiveButton("Complite", new DialogInterface.OnClickListener() {
+           // builder.setIcon(android.R.drawable.ic_popup_reminder); //제목옆의 아이콘 이미지(원하는 이미지 설정)
+            ImageView bookImg=(ImageView)dialogView.findViewById(R.id.book_img);
+            EditText nameView=(EditText)dialogView.findViewById(R.id.book_name);
+            final EditText pageView=(EditText)dialogView.findViewById(R.id.page);
+
+            nameView.setText(bookName);
+            bookImg.setImageBitmap(savebit);
+            builder.setPositiveButton("등록", new DialogInterface.OnClickListener() {
 
                 //Dialog에 "Complite"라는 타이틀의 버튼을 설정
 
@@ -98,7 +110,7 @@ public class BookListActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
 
                     // TODO Auto-generated method stub
-
+                    String page=pageView.getText().toString();
                     //멤버 정보의 입력을 완료하고 TextView에 추가 하도록 하는 작업 수행
 
 
@@ -147,13 +159,13 @@ public class BookListActivity extends AppCompatActivity {
 
                     //TextView에 추가작업을 완료 하였기에 '완료'했다는 메세지를 Toast로 출력
 
-                    Toast.makeText(BookListActivity.this, "새로운 멤버를 추가했습니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BookListActivity.this, "새로운 책을 추가했습니다", Toast.LENGTH_SHORT).show();
 
                 }
 
             });
 
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
 
                 //Dialog에 "Cancel"이라는 타이틀의 버튼을 설정
 
@@ -168,7 +180,7 @@ public class BookListActivity extends AppCompatActivity {
 
                     //취소하였기에 특별한 작업은 없고 '취소'했다는 메세지만 Toast로 출력
 
-                    Toast.makeText(BookListActivity.this, "멤버 추가를 취소합니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BookListActivity.this, "책 추가를 취소합니다", Toast.LENGTH_SHORT).show();
 
                 }
 

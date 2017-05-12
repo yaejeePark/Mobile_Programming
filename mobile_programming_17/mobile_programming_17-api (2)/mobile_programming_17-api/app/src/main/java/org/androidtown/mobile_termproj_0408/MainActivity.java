@@ -16,7 +16,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private BackPressCloseHandler backPressCloseHandler;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        startActivity(new Intent(this, SplashActivity.class));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -45,19 +47,36 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                //         .setAction("Action",null).show();
+//
+//                Intent i = new Intent(getApplicationContext(), BookListActivity.class);
+//                startActivity(i);
+//
+//            }
+//        });
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //         .setAction("Action",null).show();
-
-                Intent i = new Intent(getApplicationContext(), BookListActivity.class);
-                startActivity(i);
-
+                onActivityChanged(1);
             }
         });
+        backPressCloseHandler = new BackPressCloseHandler(this);
     }
+    public void onActivityChanged(int index){
+        if(index==0){
+            Intent i=new Intent(getApplicationContext(),WriteReport.class);
+            startActivity(i);
+        }
+        else if(index==1){
+            Intent i = new Intent(getApplicationContext(), BookListActivity.class);
+            startActivity(i);
+        }
 
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -138,5 +157,11 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        backPressCloseHandler.onBackPressed();
     }
 }
