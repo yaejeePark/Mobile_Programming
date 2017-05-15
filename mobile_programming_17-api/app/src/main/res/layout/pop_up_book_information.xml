@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <!--android:layout_width="250dp"-->
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:id="@+id/imge"
+    >
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="90sp"
+        android:layout_height="140sp"
+        android:id="@+id/book_img"
+        android:layout_columnSpan="4"
+        android:scaleType="fitXY"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imge"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/imge">
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:id="@+id/tableLayout"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp">
+
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+           >
+            <!--android:weightSum="5"-->
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/colorPrimary"
+    android:text="책 이름: "
+    />
+            <EditText
+                android:id="@+id/book_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:background="#FFFFF0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="페이지: "
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/page"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="페이지 수를 입력하세요"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:gravity="center"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:text="장 르: "
+                android:textSize="12sp"
+                android:gravity="center"/>
+            <!--<View-->
+            	        <!--android:layout_height="4px"-->
+            	        <!--android:background="#FF00FF" />-->
+
+            <Spinner
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/spinnerExample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:prompt="@string/popup_genre"
+                android:entries="@array/strarray_mobile_network_types"/>
+            <!--android:prompt="@string/popup_genre"-->
+        </TableRow>
+    </TableLayout>
+    </RelativeLayout>
+</RelativeLayout>
